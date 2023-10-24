@@ -8,6 +8,7 @@ namespace Laboratorium3_App.Models
         [HiddenInput]
         public int Id { get; set; }
 
+        [Display(Name="Imię")]
         [Required(ErrorMessage = "Proszę podać imię!")]
         [StringLength(maximumLength:100, ErrorMessage = "Zbyt długie imie")]
         public string Name { get; set; }
@@ -19,9 +20,12 @@ namespace Laboratorium3_App.Models
         [Phone(ErrorMessage ="Niepoprawny numer telefonu!!")]
         public string Phone { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime Birth { get; set; }
 
-        
+        [Display(Name = "Priorytet")]
+        public Priority Priority { get; set; }
+
 
     }
 }

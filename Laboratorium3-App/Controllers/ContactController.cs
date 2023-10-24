@@ -4,11 +4,14 @@ namespace Laboratorium3_App.Controllers
 {
     public class ContactController : Controller
     {
-        static Dictionary<int, Contact> _contacts = new Dictionary<int, Contact>();
-        public int index = 0;
+
+        static Dictionary<int, Contact> _contacts = new Dictionary<int, Contact>() {
+            {0, new Contact(){Id=0,Name="Kolos",Email="riot@onet.pl",Phone="123456789",Birth=new DateTime(2000,10,10),Priority=Priority.Low } }
+        };
+        public int index = 1;
         public IActionResult Index()
         {
-            return View(_contacts);
+            return View(_contacts.Values.ToList());
         }
 
         [HttpGet]

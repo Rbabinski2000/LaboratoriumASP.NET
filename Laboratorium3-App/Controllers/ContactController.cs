@@ -57,12 +57,8 @@ namespace Laboratorium3_App.Controllers
         [HttpGet]
         public IActionResult Update(int id)
         {
-            
                 return View(_contactService.FindById(id));
             
-            
-
-
         }
         [HttpPost]
         public IActionResult Update(Contact model)

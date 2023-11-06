@@ -33,6 +33,10 @@
         </div>
         <select class="form-control" asp-for="Priority" asp-items="@Html.GetEnumSelectList<Priority>()"></select>
     </div>
+   
+        <input class="form-control" asp-for="Created" /> 
+     
+    
 
     <button class="btn btn-primary" type="submit">Zapisz</button>
 

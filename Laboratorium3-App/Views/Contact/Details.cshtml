@@ -5,7 +5,7 @@
 @{
 }
 <div>
-<table>
+<table class="table">
     <tr>
         <th>
             Id
@@ -24,6 +24,9 @@
         </th>
         <th>
             Priority
+        </th>
+        <th>
+            Time Of Creation
         </th>
     </tr>
     <tr>
@@ -45,7 +48,10 @@
         <td>
             @Model.Priority
         </td>
+        <td>
+            @Model.Created
+        </td>
     </tr>
 </table>
-<button class="btn-primary" type="submit">Cofnij</button>
+    <a class="btn btn-secondary" asp-controller="Contact" asp-action="Index">Cofnij</a>
 </div>

@@ -22,7 +22,7 @@ namespace Laboratorium3_App.Models
         public string Phone { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime Birth { get; set; }
+        public DateTime? Birth { get; set; }
 
         [Display(Name = "Priorytet")]
         public Priority Priority { get; set; }

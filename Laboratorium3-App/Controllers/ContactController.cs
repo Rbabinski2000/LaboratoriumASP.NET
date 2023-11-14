@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Laboratorium3_App.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
 namespace Laboratorium3_App.Controllers
 {
     public class ContactController : Controller
@@ -20,7 +22,14 @@ namespace Laboratorium3_App.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            Contact model = new Contact();
+            model.Organizations = _contactService.FindAllOrganizations()
+                .Select(oe => new SelectListItem()
+                {
+                    Text=oe.Title,
+                    Value=oe.Id.ToString()
+                }).ToList();
+            return View(model);
         }
 
         [HttpPost]

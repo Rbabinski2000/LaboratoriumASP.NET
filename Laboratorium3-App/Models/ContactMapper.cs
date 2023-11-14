@@ -12,7 +12,9 @@ namespace Laboratorium3_App.Models
                 Email = model.Email,
                 Birth = model.Birth,
                 Phone = model.Phone,
-                Id = model.Id
+                Id = model.Id,
+                OrganizationId = model.OrganizationId
+                // Priority =(int) model.Priority
             };
         } 
 
@@ -24,7 +26,9 @@ namespace Laboratorium3_App.Models
                 Email = entity.Email,
                 Birth = entity.Birth,
                 Phone = entity.Phone,
-                Id = entity.Id
+                Id = entity.Id,
+                OrganizationId = entity.OrganizationId
+                //Priority=(Priority)entity.Priority
             };
         }
     }

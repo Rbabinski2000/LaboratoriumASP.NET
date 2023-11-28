@@ -49,6 +49,22 @@ namespace Laboratorium3_App.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult CreateApi()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateApi(Contact model)
+        {
+            if (ModelState.IsValid)
+            {
+                _contactService.Add(model);
+                return RedirectToAction("Index");
+            }
+            return View(model);
+        }
+
         
         public IActionResult Details(int id) {
             return View(_contactService.FindById(id));
@@ -87,6 +103,11 @@ namespace Laboratorium3_App.Controllers
         public String Edit(int? id)
         {
             return "Edycja " + id;
+        }
+
+        public IActionResult PagedIndex(int? page=1,int? size=2)
+        {
+           return View(_contactService.FindPage((int)page, (int)size));
         }
     }
 }

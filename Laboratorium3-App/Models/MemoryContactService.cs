@@ -40,6 +40,12 @@ namespace Laboratorium3_App.Models
             return _items[id];
         }
 
+
+        public PagingList<Contact> FindPage(int page, int size)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Contact item)
         {
             

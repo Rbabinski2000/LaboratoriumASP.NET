@@ -72,7 +72,9 @@ namespace Data
             {
                 Id = Guid.NewGuid().ToString(),
                 UserName = "adamo",
+                NormalizedUserName="ADAMO",
                 Email = "adamo@micros.com",
+                NormalizedEmail="ADAMO@MICROS.COM",
                 EmailConfirmed = true
             };
             

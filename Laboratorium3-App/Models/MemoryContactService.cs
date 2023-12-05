@@ -37,7 +37,14 @@ namespace Laboratorium3_App.Models
 
         public Contact? FindById(int id)
         {
-            return _items[id];
+            if (_items.ContainsKey(id))
+            {
+                return _items[id];
+            }
+            else
+            {
+                return null;
+            }
         }
 
 
